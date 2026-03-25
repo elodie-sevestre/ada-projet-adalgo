@@ -23,3 +23,22 @@ fibonacci(max) => return 0
 const max = 0
 fibonacci(max) => return []
 */
+
+export const fibonacci = (number) => {
+  if (number === 0) {
+    // retourne un array vide
+    return [];
+  } else if (number === 1) {
+    return [0];
+    // retourne un array avec un élément
+  } else if (number === 2) {
+    return [0, 1];
+    // retourne un array avec deux éléments
+  } else {
+    const result = [0, 1];
+    for (let i = 2; i < number; i++) {
+      result.push(result[result.length - 1] + result[result.length - 2]);
+    }
+    return result;
+  }
+};
