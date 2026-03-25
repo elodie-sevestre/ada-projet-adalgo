@@ -29,16 +29,10 @@ return — pour retourner le résultat
 
 export const ingly = (word) => {
   if (word.toLowerCase().endsWith("ing")) {
-    if (word.toUpperCase() === word) {
-      return word + "LY";
-    } else {
-      return word + "ly";
-    }
+    return word.toUpperCase() === word ? word + "LY" : word + "ly";
   } else {
-    if (word.toUpperCase() === word && word !== "") {
-      return word + "ING";
-    } else {
-      return word + "ing";
-    }
+    return word.toUpperCase() === word && word !== ""
+      ? word + "ING"
+      : word + "ing";
   }
 };
