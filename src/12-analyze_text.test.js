@@ -1,22 +1,22 @@
-// TODO : test analyze_text.js
+// TODO : test analyzeText.js
 import { describe, test, expect } from "vitest";
-import { analyze_text } from "./12-analyze_text";
+import { analyzeText } from "./12-analyze_text";
 
 describe("analyse_text", () => {
   test("", () => {
-    expect(analyze_text("Hello world.")).toBe({
-      letters: 11,
-      worsd: 2,
+    expect(analyzeText("Hello world.")).toBe({
+      letters: 10,
+      words: 2,
       sentences: 1,
     });
-    expect(analyze_text("Hello world. How are you?")).toBe({
-      letters: 21,
-      worsd: 5,
+    expect(analyzeText("Hello world. How are you?")).toBe({
+      letters: 19,
+      words: 5,
       sentences: 2,
     });
-    expect(analyze_text("")).toBe({
+    expect(analyzeText("")).toBe({
       letters: 0,
-      worsd: 0,
+      words: 0,
       sentences: 0,
     });
   });

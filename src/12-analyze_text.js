@@ -33,9 +33,10 @@
  * La fonction retourne un objet :
  * {letters: number, words: number, sentences: number}
  * @param {string} str
- * @returns {object} {key:valeur}
+ * @returns {object}
  */
-export const analyze_text = (str) => {
+
+export const analyzeText = (str) => {
   let letters = 0;
   let words = 0;
   let sentences = 0;
@@ -50,11 +51,15 @@ export const analyze_text = (str) => {
       if (!isAWord) {
         words += 1;
         isAWord = true;
-      } else {
-        isAWord = false;
       }
+    } else {
+      isAWord = false;
+    }
+    if (char === "." || char === "!" || char === "?") {
+      sentences += 1;
     }
   }
+  return { letters, words, sentences };
 };
 
 /*
