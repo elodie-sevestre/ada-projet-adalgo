@@ -95,7 +95,16 @@ export const myRepeat = (str, count) => {
  *      myJoin(['a', 'b', 'c'], '-'); // returns 'a-b-c'
  *      myJoin(['hello', 'world'], ' '); // returns 'hello world'
  */
-export const myJoin = () => {};
+export const myJoin = (array, separator) => {
+  let result = "";
+  for (let i = 0; i < array.length - 1; i++) {
+    result += array[i] + separator;
+  }
+  if (array.length !== 0) {
+    return (result += array[array.length - 1]);
+  }
+  return "";
+};
 
 /**
  * This function re-implements the behavior of Object.keys()
@@ -107,7 +116,15 @@ export const myJoin = () => {};
  * @example
  *      myObjectKeys({a: 1, b: 2}); // returns ['a', 'b']
  */
-export const myObjectKeys = () => {};
+export const myObjectKeys = (obj) => {
+  // je dois récupérer la clé de la propriété de l'objet
+  let string = [];
+  for (let key in obj) {
+    string[string.length] = key;
+  }
+  return string;
+  // puis je retourne sous forme de tableau contenant des strings
+};
 
 /**
  * This function re-implements the behavior of Object.entries()
@@ -120,4 +137,11 @@ export const myObjectKeys = () => {};
  *      myObjectEntries({a: 1, b: 2});
  *      // returns [['a', 1], ['b', 2]]
  */
-export const myObjectEntries = () => {};
+export const myObjectEntries = (obj) => {
+  let array = [];
+  for (let obj in obj) {
+    array[array.length] = obj;
+  }
+  return array;
+  //
+};
