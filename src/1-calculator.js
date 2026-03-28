@@ -1,7 +1,6 @@
 // ======================================= INSTRUCTION =======================================
 
-/*
-This function should return the result of an addition, subtraction, multiplication, or division.
+/* This function should return the result of an addition, subtraction, multiplication, or division.
 For example:
 const x = 2
 const y = 3

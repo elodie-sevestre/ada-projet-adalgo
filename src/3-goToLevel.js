@@ -1,7 +1,6 @@
 // ======================================= INSTRUCTION =======================================
 
-/*
-This function simulates an elevator system.
+/* This function simulates an elevator system.
 
 The elevator starts at floor 0.
 Based on the starting floor and the destination floor,

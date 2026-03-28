@@ -1,7 +1,6 @@
 // ======================================= INSTRUCTION =======================================
 
-/*
-This function checks whether a given argument is a letter or not.
+/* This function checks whether a given argument is a letter or not.
 The function takes three parameters:
 - arg: the value to check
 - call: a callback function executed if the argument is a letter
