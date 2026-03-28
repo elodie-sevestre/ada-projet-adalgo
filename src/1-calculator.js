@@ -12,7 +12,7 @@ calculator(x, y, operator) => return 5
 // ======================================= RESOLUTION ========================================
 
 /**
- * Function for calculate
+ * performs a calculation
  * @param {number} x
  * @param {number} y
  * @param {string} operator
