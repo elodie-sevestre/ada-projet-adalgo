@@ -27,7 +27,7 @@ should execute callback2
  * @param {string} arg
  * @param {function} call
  * @param {function} call2
- * @returns string
+ * @returns {string} sentence
  */
 export const filterLetter = (arg, call, call2) => {
   if (isNaN(arg)) {

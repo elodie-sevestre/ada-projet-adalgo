@@ -16,7 +16,7 @@ calculator(x, y, operator) => return 5
  * @param {number} x
  * @param {number} y
  * @param {string} operator
- * @returns result
+ * @returns {number} result
  */
 
 export const calculator = (x, y, operator) => {

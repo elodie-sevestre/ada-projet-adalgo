@@ -1,3 +1,5 @@
+// ======================================= INSTRUCTION =======================================
+
 /*
 This function simulates an elevator system.
 
@@ -17,6 +19,15 @@ const start = 3
 const end = 0
 goToLevel(startFloor, FinalPosition) => return -3
 */
+
+// ======================================= RESOLUTION ========================================
+
+/**
+ * simulates an elevator system
+ * @param {number} startFloor
+ * @param {number} finalPosition
+ * @returns {number} number of level(s)
+ */
 
 export const goToLevel = (startFloor, finalPosition) => {
   if (startFloor === finalPosition || startFloor < 0 || finalPosition > 5) {
