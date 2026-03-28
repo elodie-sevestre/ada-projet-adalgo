@@ -27,7 +27,6 @@ export const passwd_validator = (str) => {
   if (str.length < 6 || str.length > 12) return false;
 
   // déclaration variable pour caractère à valider
-
   let hasLowerChar = false;
   let hasUpperChar = false;
   let hasNumberChar = false;
@@ -36,23 +35,17 @@ export const passwd_validator = (str) => {
   // boucle pour vérifier si les conditions d'écriture du passwd sont validées
   for (let i = 0; i < str.length; i++) {
     let char = str[i];
-    // - est-ce une minuscule (a-z) ?  → hasLower = true
-    if (char >= "a" && char <= "z") hasLowerChar = true;
-    // - est-ce une majuscule (A-Z) ?  → hasUpper = true
-    if (char >= "A" && char <= "Z") hasUpperChar = true;
-    // - est-ce un chiffre (0-9) ?     → hasNumber = true
-    if (char >= "0" && char <= "9") hasNumberChar = true;
-    // - est-ce $, # ou @ ?            → hasSpecial = true
-    if (char === "$" || char === "#" || char === "@") hasSpecialChar = true;
-  }
-  // Retourner VRAI seulement si les 4 conditions sont vraies}
-  return hasLowerChar && hasUpperChar && hasNumberChar && hasSpecialChar;
-};
 
-/*
-ASCII : les caractères ont des codes numériques ordonnés
-    - 'a'(97) à 'z'(122) → minuscules
-    - 'A'(65) à 'Z'(90)  → majuscules
-    - '0'(48) à '9'(57)  → chiffres
-    //* console.log("x".charCodeAt(0));
-*/
+    // ASCII : les caractères ont des codes numériques ordonnés
+    // 'a'(97) à 'z'(122) → minuscules
+    // console.log("x".charCodeAt(0));
+
+    if (char >= "a" && char <= "z") hasLowerChar = true;
+    if (char >= "A" && char <= "Z") hasUpperChar = true;
+    if (char >= "0" && char <= "9") hasNumberChar = true;
+    if (char === "$" || char === "#" || char === "@") hasSpecialChar = true;
+
+    // Retourner VRAI seulement si les 4 conditions sont vraies}
+    return hasLowerChar && hasUpperChar && hasNumberChar && hasSpecialChar;
+  }
+};
