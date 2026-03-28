@@ -1,5 +1,5 @@
 import { describe, test, expect } from "vitest";
-import { passwd_validator } from "./11-passwd_validator";
+import { passwd_validator } from "./11-passwdValidator";
 
 describe("passwd_validator", () => {
   test("returns false if less than 6 characters", () => {

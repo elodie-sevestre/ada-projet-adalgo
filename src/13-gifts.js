@@ -1,4 +1,4 @@
-/**
+/** totalPrice()
  * This function takes an array of gifts and returns the total price.
  *
  * @example
@@ -7,6 +7,7 @@
  * @param {{name: string, price: number}[]} gifts
  * @returns {number} total price
  */
+
 export const totalPrice = (gifts) => {
   let result = 0;
   gifts.forEach((element) => {
@@ -16,12 +17,13 @@ export const totalPrice = (gifts) => {
   return result;
 };
 
-/**
+/** mostExpensive()
  * This function takes an array of gifts and returns the name of the most expensive one.
  *
  * @param {{name: string; price: number}[]} gifts
  * @returns {string} gift's name
  */
+
 export const mostExpensive = (gifts) => {
   let maxGift = gifts[0];
   for (const gift of gifts) {
@@ -32,7 +34,7 @@ export const mostExpensive = (gifts) => {
   return maxGift.name;
 };
 
-/**
+/** globalMostExpensive()
  * This function takes an array of kids and returns the name of the most expensive gift
  * within all kids.
  *
@@ -48,6 +50,7 @@ export const mostExpensive = (gifts) => {
  * @param {{name: string; gifts: {name: string; price: number}[]}[]} kids
  * @returns {string} gift's name
  */
+
 export const globalMostExpensive = (kids) => {
   if (kids.length === 0) return null;
 
@@ -64,7 +67,7 @@ export const globalMostExpensive = (kids) => {
   return maxGift.name;
 };
 
-/**
+/** preferedKid()
  * This function takes an array of kids and return the name of the kid that has
  * the most expensive gifts for christmas.
  *
@@ -100,7 +103,7 @@ export const preferedKid = (kids) => {
   return expensiveKid;
 };
 
-/**
+/** distributeGifts()
  * Distributes a list of gifts among a list of kids.
  *
  * Each gift is assigned to one kid, and **all assigned gifts are removed from the
@@ -141,7 +144,7 @@ export const preferedKid = (kids) => {
  *   The same `kids` array with updated gift assignments.
  *
  * @example
- * // Balanced distribution example
+ * //* Balanced distribution example
  * const gifts = [
  *   { name: "RC Car", price: 60 },
  *   { name: "Lego Set", price: 40 },
@@ -157,16 +160,16 @@ export const preferedKid = (kids) => {
  *
  * distributeGifts(gifts, kids);
  *
- * // Correct result respecting balance priority:
- * // Alice:   RC Car (60)
- * // Bob:     Lego Set (40)
- * // Charlie: Puzzle (15)
- * // Charlie: Chocolate Box (10)  // NOT Alice — gives better total-value balance
+ * //* Correct result respecting balance priority:
+ * //* Alice:   RC Car (60)
+ * //* Bob:     Lego Set (40)
+ * //* Charlie: Puzzle (15)
+ * //* Charlie: Chocolate Box (10)  // NOT Alice — gives better total-value balance
  *
- * // gifts is now []
+ * //* gifts is now []
  *
  * @example
- * // Example with tied scores and a limited gift pool:
+ * //* Example with tied scores and a limited gift pool:
  * const gifts = [
  *   { name: "Book", price: 20 },
  *   { name: "Stickers", price: 5 },
@@ -180,10 +183,54 @@ export const preferedKid = (kids) => {
  *
  * distributeGifts(gifts, kids);
  *
- * // Emma: Book (20)
- * // Liam: Stickers (5)
- * // Noah: []
+ * //* Emma: Book (20)
+ * //* Liam: Stickers (5)
+ * //* Noah: []
  *
- * // gifts is now []
+ * //* gifts is now []
  */
-export const distributeGifts = (gifts, kids) => {};
+
+export const distributeGifts = (gifts, kids) => {
+  if (kids.length === 0) return []; // Si kids est vide, on retourne directement sans rien faire
+
+  // Trier les cadeaux du plus cher au moins cher
+  // - comparer chaque cadeau avec le suivant et les échanger si nécessaire
+  for (let i = 0; i < gifts.length; i++) {
+    for (let j = 0; j < gifts.length - 1; j++) {
+      if (gifts[j].price < gifts[j + 1].price) {
+        let giftMostExpensive = gifts[j];
+        gifts[j] = gifts[j + 1];
+        gifts[j + 1] = giftMostExpensive;
+      }
+    }
+  }
+
+  // Distribuer les cadeaux tant qu'il en reste
+  // - comparer avec chaque autre enfant pour trouver le meilleur candidat
+  while (gifts.length > 0) {
+    let bestKid = kids[0]; // le premier enfant est le meilleur candidat
+
+    for (let i = 1; i < kids.length; i++) {
+      // -- calculer le total des cadeaux de l'enfant en cours et du meilleur candidat
+      const totalKid = kids[i].gifts.reduce((sum, gift) => sum + gift.price, 0);
+      const totalBestKid = bestKid.gifts.reduce(
+        (sum, gift) => sum + gift.price,
+        0,
+      );
+      // -- si l'enfant en cours a un total inférieur : il devient le nouveau candidat
+      if (totalKid < totalBestKid) {
+        bestKid = kids[i];
+        // -- si les totaux sont égaux et que son behaviorScore est supérieur : il devient le nouveau candidat
+      } else if (
+        totalKid === totalBestKid &&
+        kids[i].behaviorScore > bestKid.behaviorScore
+      ) {
+        bestKid = kids[i];
+      }
+    }
+    // - donner le cadeau le plus cher restant au meilleur candidat
+    bestKid.gifts.push(gifts[0]); // ajouter le cadeau dans les cadeaux de l'enfant
+    gifts.shift(); // retirer le cadeau du tableau gifts
+  }
+  return kids;
+};

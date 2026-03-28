@@ -1,6 +1,6 @@
 // TODO : test analyzeText.js
 import { describe, test, expect } from "vitest";
-import { analyzeText } from "./12-analyze_text";
+import { analyzeText } from "./12-analyzeText";
 
 describe("analyse_text", () => {
   test("", () => {
