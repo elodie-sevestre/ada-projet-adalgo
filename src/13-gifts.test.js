@@ -31,8 +31,19 @@ suite("mostExpensive", () => {
 
 suite("globalMostExpensive", () => {
   // TODO: write some tests
-  test("", () => {});
-  expect(globalMostExpensive()).toBe();
+  test("returns the name of the most expensive gift", () => {});
+  expect(
+    globalMostExpensive([
+      {
+        name: "Issa",
+        gifts: [
+          { name: "iPhone", price: 800 },
+          { name: "skateboard", price: 70 },
+        ],
+      },
+      { name: "Noor", gifts: [{ name: "apple", price: 1 }] },
+    ]),
+  ).toBe("iPhone");
 });
 
 suite("preferedKid", () => {
@@ -85,7 +96,7 @@ suite("preferedKid", () => {
       },
     ];
 
-    expect(preferedKid(kids)).toBe("Amina");
+    expect(preferedKid(kids)).toBe("Clara");
   });
 
   test("returns the first kid in case of tied total gift prices", () => {

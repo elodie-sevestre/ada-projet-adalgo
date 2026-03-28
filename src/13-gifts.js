@@ -85,7 +85,7 @@ export const globalMostExpensive = (kids) => {
  */
 
 export const preferedKid = (kids) => {
-  if (kids.length === 0) return null;
+  if (kids.length === 0) return undefined;
 
   let expensiveKid = null; // l'enfant le plus cher
   let maxTotal = 0;
