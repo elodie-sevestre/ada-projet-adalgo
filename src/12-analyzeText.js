@@ -1,3 +1,5 @@
+// ======================================= INSTRUCTION =======================================
+
 /* Write a function named analyze_text that takes a string as argument.
 
  It will return an object with the following properties:
@@ -29,8 +31,11 @@
  Will return:
  { letters: 0, words: 0, sentences: 0 }
 */
+
+// ======================================= RESOLUTION ========================================
+
 /**
- * La fonction retourne un objet :
+ * takes a string as an argument and returns an object
  * {letters: number, words: number, sentences: number}
  * @param {string} str
  * @returns {object}
@@ -61,24 +66,3 @@ export const analyzeText = (str) => {
   }
   return { letters, words, sentences };
 };
-
-/*
-
-inWord = false  // suis-je en train de lire un mot ?
-
-
-Retourner { letters, words, sentences }
-*/
-
-/*
-Pour chaque caractère :
-  SI c'est une lettre (a-z ou A-Z) :
-    letters += 1
-    SI on n'était pas déjà dans un mot :
-      words += 1
-      inWord = true
-  SINON :
-    inWord = false
-  SI c'est '.', '!' ou '?' :
-    sentences += 1
-    */

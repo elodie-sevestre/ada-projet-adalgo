@@ -1,11 +1,10 @@
-/** totalPrice()
- * This function takes an array of gifts and returns the total price.
- *
- * @example
- *      totalPrice([{name: 'iPhone', price: 800}, {name: 'skateboard', price: 70}]); // returns 870
- *
+// ======================================= totalPrice() ========================================
+
+/** function takes an array of gifts and returns the total price.
  * @param {{name: string, price: number}[]} gifts
  * @returns {number} total price
+ * @example
+ *      totalPrice([{name: 'iPhone', price: 800}, {name: 'skateboard', price: 70}]); // returns 870
  */
 
 export const totalPrice = (gifts) => {
@@ -17,8 +16,9 @@ export const totalPrice = (gifts) => {
   return result;
 };
 
-/** mostExpensive()
- * This function takes an array of gifts and returns the name of the most expensive one.
+// ===================================== mostExpensive() =======================================
+
+/** takes an array of gifts and returns the name of the most expensive one.
  *
  * @param {{name: string; price: number}[]} gifts
  * @returns {string} gift's name
@@ -33,22 +33,20 @@ export const mostExpensive = (gifts) => {
   }
   return maxGift.name;
 };
+// =================================== globalMostExpensive() ===================================
 
-/** globalMostExpensive()
- * This function takes an array of kids and returns the name of the most expensive gift
- * within all kids.
- *
+/** takes an array of kids and returns the name of the most expensive gift within all kids.
  * Each kid in an objet with a name and a list of gift.
  * Each give has a name and a price.
+ *
+ * @param {{name: string; gifts: {name: string; price: number}[]}[]} kids
+ * @returns {string} gift's name
  *
  * @example
  *     globalMostExpensive([
  *          {name: 'Issa', gifts: [{name: 'iPhone', price: 800}, {name: 'skateboard', price: 70}]},
  *          {name: 'Noor', gifts: [{name: 'apple', price: 1}]}
  *      ]); // returns 'iPhone'
- *
- * @param {{name: string; gifts: {name: string; price: number}[]}[]} kids
- * @returns {string} gift's name
  */
 
 export const globalMostExpensive = (kids) => {
@@ -67,12 +65,15 @@ export const globalMostExpensive = (kids) => {
   return maxGift.name;
 };
 
-/** preferedKid()
- * This function takes an array of kids and return the name of the kid that has
- * the most expensive gifts for christmas.
- *
+// ======================================= preferedKid() =======================================
+
+/** this function takes an array of kids and return the name of the kid that has the most expensive gifts for christmas.
  * Each kid in an objet with a name and a list of gift.
  * Each give has a name and a price.
+ *
+ *
+ * @param {{name: string; gifts: {name: string; price: number}[]}[]} kids
+ * @returns {string} kid's name
  *
  * For example if a kid get an iPhone (800€) and a skateboard (70€), it would have 870€
  * of gifts. If another gets an apple (1€), the prefered kid is the first one.
@@ -82,9 +83,6 @@ export const globalMostExpensive = (kids) => {
  *          {name: 'Issa', gifts: [{name: 'iPhone', price: 800}, {name: 'skateboard', price: 70}]},
  *          {name: 'Noor', gifts: [{name: 'apple', price: 1}]}
  *      ]); // returns 'Issa'
- *
- * @param {{name: string; gifts: {name: string; price: number}[]}[]} kids
- * @returns {string} kid's name
  */
 
 export const preferedKid = (kids) => {
@@ -103,8 +101,9 @@ export const preferedKid = (kids) => {
   return expensiveKid;
 };
 
-/** distributeGifts()
- * Distributes a list of gifts among a list of kids.
+// ===================================== distributeGifts() =====================================
+
+/** distributes a list of gifts among a list of kids.
  *
  * Each gift is assigned to one kid, and **all assigned gifts are removed from the
  * original `gifts` array** (the array MUST be emptied by the end of the function).

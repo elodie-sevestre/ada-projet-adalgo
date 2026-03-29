@@ -1,3 +1,9 @@
+// ========================================= BONUS ==========================================
+
+/**
+ * initializes the navigation buttons by hiding the next button and creating the result button.
+ */
+
 export function initNextButton() {
   const nextButton = document.getElementById("next-question-button");
   const resultButton = document.createElement("button");
