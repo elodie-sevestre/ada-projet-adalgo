@@ -27,7 +27,7 @@
  * @returns boolean
  */
 export const passwd_validator = (str) => {
-  // SI longueur < 6 OU longueur > 12 → retourner FAUX
+  // SI longueur < 6 OU longueur > 12 : retourner FAUX
   if (str.length < 6 || str.length > 12) return false;
 
   // déclaration variable pour caractère à valider
