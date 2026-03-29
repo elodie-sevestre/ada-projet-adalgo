@@ -1,18 +1,25 @@
+// ======================================= INSTRUCTION =======================================
+
+/*  This function takes a message as parameter and replaces all occurences
+ of "pain au chocolat" by "chocolatine".
+ 
+ This would work with "pains au chocolat" and "chocolatines" as well and when
+ we see "un pain au chocolat" it should be replaced by "une chocolatine".
+ 
+ */
+
+// ======================================= RESOLUTION ========================================
+
 /**
- * This function takes a message as parameter and replaces all occurences
- * of "pain au chocolat" by "chocolatine".
- *
- * This would work with "pains au chocolat" and "chocolatines" as well and when
- * we see "un pain au chocolat" it should be replaced by "une chocolatine".
+ * takes a message as parameter and replaces all occurences
  *
  * @param {string} message The message in which the text should be replaced
  * @returns {string} an updated message with every "pain au chocolat" replaced by "chocolatine"
  */
+
 export const chocolatine = (message) => {
   return message
     .replaceAll("un pain au chocolat", "une chocolatine")
     .replaceAll("pains au chocolat", "chocolatines")
     .replaceAll("pain au chocolat", "chocolatine");
-  // Remplacer "pain(s) au chocolat" par "chocolatine(s)"
-  // Remplacer "un pain au chocolat" par "une chocolatine"
 };

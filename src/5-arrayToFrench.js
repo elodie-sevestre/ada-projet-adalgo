@@ -1,20 +1,23 @@
-/**
- * This function takes an array of words and convert it into a french sentence.
- * Words are separated by commas and the two last words are separated by "et".
- *
- * @param {string[]} array array of words
- * @returns {string}
- *
- * @example
- *      arrayToFrench(['un', 'deux', 'trois', 'soleil']); // returns "un, deux, trois et soleil"
- *      arrayToFrench(['noir', 'blanc']); // returns "noir et blanc"
+// ======================================= INSTRUCTION =======================================
+
+/* This function takes an array of words and convert it into a french sentence.
+  Words are separated by commas and the two last words are separated by "et".
+ 
+  @param {string[]} array array of words
+  @returns {string}
+ 
+  @example
+       arrayToFrench(['un', 'deux', 'trois', 'soleil']); // returns "un, deux, trois et soleil"
+       arrayToFrench(['noir', 'blanc']); // returns "noir et blanc"
  */
 
-// récupérer les mots du tableau
-// séparation avec "," et/ou "et"
-// tableau = 0 mot
-// tableau = 1 mot
-// tableau = avec plusieurs mots
+// ======================================= RESOLUTION ========================================
+
+/**
+ * Takes an array of words and convert it into a french sentence *
+ * @param {string[]} array array of words
+ * @returns {string}
+ */
 
 export const arrayToFrench = (array) => {
   if (array.length === 0) {

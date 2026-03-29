@@ -1,5 +1,6 @@
-/*
-This function generates the Fibonacci sequence.
+// ======================================= INSTRUCTION =======================================
+
+/* This function generates the Fibonacci sequence.
 
 The Fibonacci sequence starts with 0 and 1.
 Each next number is the sum of the two previous numbers.
@@ -24,16 +25,21 @@ const max = 0
 fibonacci(max) => return []
 */
 
+// ======================================= RESOLUTION ========================================
+
+/**
+ * generates the Fibonacci sequence
+ * @param {number} number
+ * @returns {Array} fibonacci sequence
+ */
+
 export const fibonacci = (number) => {
   if (number === 0) {
-    // retourne un array vide
-    return [];
+    return []; // retourne un array vide
   } else if (number === 1) {
-    return [0];
-    // retourne un array avec un élément
+    return [0]; // retourne un array avec un élément
   } else if (number === 2) {
-    return [0, 1];
-    // retourne un array avec deux éléments
+    return [0, 1]; // retourne un array avec deux éléments
   } else {
     const result = [0, 1];
     for (let i = 2; i < number; i++) {
