@@ -21,15 +21,3 @@ describe("analyse_text", () => {
     });
   });
 });
-
-// Pour comparer des valeurs primitives (string, number, boolean)
-// toBe utilise === : vérifie que c'est exactement la même valeur en mémoire
-// expect(2 + 2).toBe(4) ✅
-
-// Pour comparer des objets ou des tableaux
-// toStrictEqual compare le contenu propriété par propriété
-// { a: 1 } === { a: 1 } → false (deux objets différents en mémoire)
-// expect({ a: 1 }).toStrictEqual({ a: 1 }) → true ✅
-
-// toEqual fonctionne aussi pour les tableaux
-// expect([1, 2]).toEqual([1, 2]) ✅

@@ -1,3 +1,5 @@
+// ======================================= INSTRUCTION =======================================
+
 /* Write a function named passwd_validator that takes a string as argument.
 
  It will return True if the string is a valid password; False otherwise.
@@ -17,8 +19,10 @@
  This: passwd_validator("fwjifewJ#")
  Will return: False (because there's no decimal numbers) */
 
+// ======================================= RESOLUTION ========================================
+
 /**
- *
+ * check if the string is a valid password
  * @param {string} str
  * @returns boolean
  */

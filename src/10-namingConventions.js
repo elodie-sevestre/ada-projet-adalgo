@@ -1,9 +1,12 @@
+// ======================================= RESOLUTION ========================================
+
 /**
- * Takes a input name formatted in snakecase and return the same name in camelcase.
+ * takes a input name formatted in snakecase and return the same name in camelcase.
  *
  * @param {string} str the input name
  * @returns {string} the new output name
  */
+
 export const toCamelCase = (str) => {
   if (!str.includes("_")) {
     return str;
@@ -21,12 +24,15 @@ export const toCamelCase = (str) => {
   return result;
 };
 
+// ======================================= RESOLUTION ========================================
+
 /**
- * Takes a input name formatted in camelcase and return the same name in snakecase.
+ * takes a input name formatted in camelcase and return the same name in snakecase.
  *
  * @param {string} str the input name
  * @returns {string} the new output name
  */
+
 export const toSnakeCase = (str) => {
   let result = "";
   for (let i = 0; i < str.length; i++) {
