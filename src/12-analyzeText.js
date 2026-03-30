@@ -13,7 +13,7 @@
 
  ⚠️ You are NOT allowed to use:
  - split()
- - Regular expressions
+ - Regular expressions (REGEX)
 
  You must iterate through the string character by character.
 
@@ -47,7 +47,7 @@ export const analyzeText = (str) => {
   let sentences = 0;
   let isAWord = false;
 
-  if (str === "") return { letters, words, sentences }; // que retourner ?
+  if (str === "") return { letters, words, sentences };
 
   for (let i = 0; i < str.length; i++) {
     const char = str[i];
